@@ -39,8 +39,11 @@ NoCab varchar(50) NOT NULL
 
 analisis 
 -  `create table` :  digunakan untuk membuat table pada database yang telah dibuat.
-- `` not null``:  digunakan untuk mengetahui isi table tidak kosong.
-- `primary key `: digunakan pada table agar tidak ada data yang sama.
+- Kolom `NIP` : kolom yang merupakan primary key yang akan diisi dan tidak boleh ada data yang sama, dengan tipe data `int(3)` dengan maksimal data 3 digit dan menggunakan fitur AUTO_INCREMENT.
+- Kolom `NDep` : menyimpan data nama depan dengan tipe data `varchar(50)` dengan panjang data 50 karakter dan `NOT NULL ` yang bersifat wajib diisi.
+-  Kolom `NBlk` : menyimpan data nama belakang dengan tipe data `varchar(50)` dengan panjang data 50 karakter dan  bersifat opsional / bisa tidak diisi.
+- Kolom `jenis_kelamin` : menyimpan data jenis kelamin dengan tipe data `enum` digunakan untuk mendefinisikan sekumpulan nilai yang mewakili status atau kondisi tertentu dan bersifat `NOT NULL` yang bersifat wajib diisi.
+- Kolom `alamat` : menyimpan data alamat dengan tipe data `text` 
 
 # Menampilkan table 
 code 
@@ -51,7 +54,7 @@ DESC pegawai;
 ![](asset/foto_12.PNG)
 analisis 
 - ``desc ``: di gunakan untuk menampilkan tabel yang telah dibuat.
-- ``pegawai ``: adalah nama tabel yang ingin di tampilkan
+- ``pegawai ``: adalah nama tabel yang ingin di tampilkan.
 # Memasukkan data 
  code 
  ```sql
