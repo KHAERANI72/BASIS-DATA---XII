@@ -77,7 +77,7 @@ analisis
 	SELECT * FROM pegawai;
 	```
 
-   ![](asset/foto_8.PNG)
+   ![foto_8|790](asset/foto_8.PNG)
    
    analisis 
   - `SELECT` : di gunakan untuk menampilkan data yang sudah di masukkan.
@@ -90,7 +90,7 @@ analisis
    SELECT COUNT(NIP) AS jumlahpegawai, COUNT(jabatan) AS jumlahjabatan FROM pegawai;
    ```
 
-   ![](asset/foto_13.PNG)
+   ![foto_13|790](asset/foto_13.PNG)
    
    ANALISIS :
    - `SELECT ` : digunakan untuk menentukan kolom apa yang ingin tampilkan dalam hasil query.
@@ -119,8 +119,8 @@ analisis
    ```sql
    SELECT NoCab, COUNT(NIP) AS jumlah_pegawai
    FROM pegawai GROUP BY NoCab;
-  ```
- ![](asset/foto_15.PNG)
+   ```
+   ![](asset/foto_15.PNG)
 
    Analisis:
    - `SELECT NoCab`  : digunakan untuk menentukan kolom `NoCab`  yang ingin  tampilkan dalam hasil query.
@@ -128,6 +128,7 @@ analisis
    -  `AS jumlah_pegawai` : Hasil perhitungan diberi nama `jumlah_pegawai`, yang menjelaskan bahwa ini adalah jumlah total pegawai.
    - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`. 
    - `GROUP BY NoCab` : digunakan untuk mengelompokkan hasil berdasarkan kolom `NoCab`. yang dimana akan dihitung jumlah pegawai (`jumlah_pegawai`) untuk setiap cabang.
+
 5. Menampilkan suatu kelompok data dengan menentukan kondisi yang dipenuhi
    code 
    ```sql
@@ -160,7 +161,7 @@ analisis
    - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
 7. Menampilkan data gaji yang telah di jumlahkan pada jabatan 'Manajer' 
    code 
-   ```sql
+  ```sql
   SELECT SUM(Gaji) AS gaji_manajer
   FROM pegawai WHERE jabatan = 'Manajer' ; 
   ```
