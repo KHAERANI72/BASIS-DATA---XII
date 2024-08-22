@@ -184,13 +184,13 @@ analisis
 
  ![](asset/foto_19.PNG) 
 
-  Analisis : 
- - `SELECT NoCab` : 
- - `SUM(Gaji` : 
- - `AS Total_gaji` : 
- - `FROM pegawai` : 
- - `GROUP BY NoCab` : 
-9. Menampilkan data gaji yang telah di kelompokkan berdasarkan 'Jabatan' 
+ Analisis : 
+ - `SELECT NoCab` :  digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
+ - `SUM(Gaji`) : digunakan untuk menjumlahkan nilai dalam kolom `Gaji` untuk setiap kelompok `NoCab`. 
+ - `AS Total_gaji` : Hasil perhitungan diberi nama `total_gaji`, yang menjelaskan bahwa ini adalah jumlah total  gaji pegawai.
+ - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+ - `GROUP BY NoCab` : digunakan untuk mengelompokkan data berdasarkan kolom `NoCab`
+9. Menampilkan data gaji yang telah di kelompokkan berdasarkan gaji '>= 8000000' 
    code 
    ```sql
    SELECT NoCab, SUM(Gaji) AS Total_gaji
@@ -200,12 +200,12 @@ analisis
    ![](asset/foto_20.PNG)
 
    Analisis : 
-   - `SELECT NoCab` : 
-   - `SUM(Gaji)` : 
-   - `AS Total_gaji` : 
-   - `FROM pegawai` : 
-   - `GROUP BY NoCab` : 
-   - `HAVING SUM(Gaji) >= 8000000` : 
+   - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
+   - `SUM(Gaji)` : digunakan untuk menjumlahkan nilai dalam kolom `Gaji` untuk setiap kelompok `NoCab`. 
+   - `AS Total_gaji` :  Hasil perhitungan diberi nama `total_gaji`, yang menjelaskan bahwa ini adalah jumlah total  gaji pegawai.
+   - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+   - `GROUP BY NoCab` : digunakan untuk mengelompokkan data berdasarkan kolom `NoCab`
+   - `HAVING SUM(Gaji) >= 8000000` : digunakan untuk memfilter hasil yang telah dikelompokkan oleh `GROUP BY`. `SUM(Gaji)>= 8000000` menyaring kelompok-kelompok yang hanya memiliki total gaji (Total_gaji) sebesar 8.000.000 atau lebih. 
 10. Menampilkan Rata-rata gaji pegawai
    code
    ```sql
@@ -215,10 +215,10 @@ analisis
    ![](asset/foto_21.PNG)
 
    Analisis : 
-   - `SELECT` : 
-   - `AVG(Gaji` : 
-   - `AS rata_rata` : 
-   - `FROM pegawai` : 
+   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+   - `AVG(Gaji)` : `AVG()` adalah fungsi agregat dalam SQL yang digunakan untuk menghitung rata-rata dari nilai-nilai dalam kolom yang ditentukan. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+   - `AS rata_rata` : Hasil perhitungan diberi nama `rata_rata`, yang menjelaskan bahwa ini adalah jumlah Rata-rata gaji pegawai.
+   - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
 11. Menampilkan Rata-rata gaji yang telah di jumlahkan pada jabatan 'Manajer' 
    code 
    ```sql
@@ -230,9 +230,155 @@ analisis
   ![](asset/foto_22.PNG)
 
   Analisis: 
-  - `SELECT` : 
-  - `AVG(Gaji)` : 
-  - `AS GajiRataMgr` : 
-  - `FROM pegawai` : 
-  - `WHERE jabatan = 'Manajer'` : 
-12. 
+  - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+  - `AVG(Gaji)` : `AVG()` adalah fungsi agregat dalam SQL yang digunakan untuk menghitung rata-rata dari nilai-nilai dalam kolom yang ditentukan.  `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS GajiRataMgr` : Hasil perhitungan diberi nama `GajiRataMgr`, yang menjelaskan bahwa ini adalah jumlah Rata-rata gaji pada jabatan `Manajer`.
+  - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+  - `WHERE jabatan = 'Manajer'` : digunakan untuk menyaring data yang akan diproses berdasarkan kondisi tertentu. Kondisi ini menyaring data sehingga hanya baris yang memiliki nilai jabatan sama dengan 'Manajer'.
+ 
+12. Menampilkan rata-rata gaji yang sudah di kelompokkan berdasarkan 'NoCab'
+   code 
+   ```sql
+  SELECT NoCab, AVG(Gaji) AS Rata_Gaji
+  FROM pegawai GROUP BY NoCab;
+  ```
+
+  ![MSQL](asset/foto_23.PNG)
+
+  Analisis : 
+  - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
+  - `AVG(Gaji)` : `AVG()` adalah fungsi agregat dalam SQL yang digunakan untuk menghitung rata-rata dari nilai-nilai dalam kolom yang ditentukan.  `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS Rata_Gaji` : Hasil perhitungan diberi nama `Rata_Gaji`, yang menjelaskan bahwa ini adalah jumlah Rata-rata gaji pegawai.
+  - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+  - `GROUP BY NoCab` : digunakan untuk mengelompokkan data berdasarkan kolom `NoCab`
+13. Menampilkan rata-rata gaji yang sudah di kelompokkan berdasarkan 'NoCab' C101 dan C102
+   Code
+   ```sql
+   SELECT NoCab, AVG(Gaji) AS Rata_Gaji
+   FROM pegawai GROUP BY NoCab HAVING NoCab = 'C101' OR NoCab = 'C102';
+  ```
+
+  ![MSQL](asset/foto_24.PNG)
+
+  ANALISIS : 
+  - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
+  - `AVG(Gaji)` : `AVG()` adalah fungsi agregat dalam SQL yang digunakan untuk menghitung rata-rata dari nilai-nilai dalam kolom yang ditentukan.  `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS Rata_Gaji` : Hasil perhitungan diberi nama `Rata_Gaji`, yang menjelaskan bahwa ini adalah jumlah Rata-rata gaji pegawai.
+  - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+  - `GROUP BY NoCab` : digunakan untuk mengelompokkan data berdasarkan kolom `NoCab`
+  - `HAVING NoCab = 'C101' OR NoCab = 'C102'` : digunakan untuk menyaring data setelah pengelompokan Kondisi untuk menyaring hasil sehingga hanya cabang dengan nomor `C101` atau `C102` yang ditampilkan dalam hasil.
+14. Menampilkan Gaji terbesar dan terkecil pada pegawai
+   code 
+   ```sql
+  SELECT MAX(Gaji) AS Gaji_Terbesar, MIN(Gaji) AS Gaji_Terkecil
+  FROM pegawai;
+  ```
+
+   ![MSQL](asset/foto_25.PNG)
+
+   Analisis: 
+   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+   - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+   - `AS Gaji_Terbesar` : Hasil perhitungan diberi nama `Gaji_Terbesar`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
+   - `MIN(Gaji)` : `MIN()` digunakan untuk menentukan nilai minimum atau nilai terkecil dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+   - `AS Gaji_Terkecil` : Hasil perhitungan diberi nama `Gaji_Terkecil`, yang menjelaskan bahwa ini adalah minimum atau nilai terkecil gaji pada kolom pegawai.
+   - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+15. Menampilkan Gaji terbesar dan terkecil yang telah di kelompokkan berdasarkan jabatan 'Manajer'
+   code 
+   ```sql
+  SELECT MAX(Gaji) AS Gaji_Terbesar, MIN(Gaji) AS Gaji_Terkecil
+  FROM pegawai WHERE jabatan = 'Manajer' ;
+  ```
+
+  ![MSQL](asset/foto_26.PNG) 
+  ANALISIS: 
+ - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+ - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+ - `AS Gaji_Terbesar` : Hasil perhitungan diberi nama `Gaji_Terbesar`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
+ - `MIN(Gaji)` : `MIN()` digunakan untuk menentukan nilai minimum atau nilai terkecil dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+ - `AS Gaji_Terkecil` : Hasil perhitungan diberi nama `Gaji_Terkecil`, yang menjelaskan bahwa ini adalah minimum atau nilai terkecil gaji pada kolom pegawai.
+ - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+ - `WHERE jabatan = 'Manajer' ` : digunakan untuk menyaring data yang akan diproses berdasarkan kondisi tertentu. Kondisi ini menyaring data sehingga hanya baris yang memiliki nilai jabatan sama dengan 'Manajer'.
+16. Menampilkan Gaji terbesar dan terkecil yang telah di kelompokkan berdasarkan 'NoCab' 
+  code 
+  ```sql
+  SELECT MAX(Gaji) AS Gaji_Terbesar, MIN(Gaji) AS Gaji_Terkecil
+  FROM pegawai GROUP BY NoCab;
+  ```
+
+  ![MSQL](asset/foto_27.PNG) Analisis : 
+  - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+  - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS Gaji_Terbesar` : Hasil perhitungan diberi nama `Gaji_Terbesar`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
+  - `MIN(Gaji)` : `MIN()` digunakan untuk menentukan nilai minimum atau nilai terkecil dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS Gaji_Terkecil` : Hasil perhitungan diberi nama `Gaji_Terkecil`, yang menjelaskan bahwa ini adalah minimum atau nilai terkecil gaji pada kolom pegawai.
+  - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+  - `GROUP BY NoCab` : digunakan untuk mengelompokkan data berdasarkan kolom `NoCab`
+17. Menampilkan Gaji terbesar dan terkecil yang hasil hitungannya lebih dari atau sama dengan 3
+   code 
+   ```sql
+  SELECT MAX(Gaji) AS Gaji_Terbesar, MIN(Gaji) AS Gaji_Terkecil
+  FROM pegawai GROUP BY NoCab HAVING COUNT(NIP) >= 3; 
+  ```
+
+  ![MSQL](asset/foto_28.PNG)
+
+  Analisis : 
+  - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+  - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS Gaji_Terbesar` : Hasil perhitungan diberi nama `Gaji_Terbesar`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
+  - `MIN(Gaji)` : `MIN()` digunakan untuk menentukan nilai minimum atau nilai terkecil dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS Gaji_Terkecil` : Hasil perhitungan diberi nama `Gaji_Terkecil`, yang menjelaskan bahwa ini adalah minimum atau nilai terkecil gaji pada kolom pegawai.
+  - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+  - `GROUP BY NoCab` : digunakan untuk mengelompokkan data berdasarkan kolom `NoCab`
+  - `HAVING COUNT(NIP) >= 3` : digunakan untuk menyaring kelompok hasil setelah proses `GROUP BY`. `COUNT(NIP)` yang digunakan untuk menghitung jumlah baris dalam setiap kelompok yang memiliki nilai `NIP` kondisi ` >= 3` berarti hanya yang memiliki tiga atau lebih pegawai yang akan ditampilkan dalam hasil.
+18. Menampilkan MAX, MIN, SUM, AVG dan total pegawai pada tabel
+   code 
+   ```sql
+   SELECT COUNT(NIP) AS jumlahpegawai, SUM(Gaji) AS TotalGaji,
+   AVG(Gaji) AS RataGaji, MAX(Gaji) AS GajiMaks, MIN(Gaji) AS GajiMin
+   FROM pegawai;
+  ```
+
+  ![MSQL](asset/foto_29.PNG)
+
+  ANALISIS : 
+  - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+  - `COUNT(NIP)` : digunakan untuk menghitung jumlah kolom pada tabel `pegawai`  yang di mana `(NIP)` berfungsi menghitung  jumlah baris yang ada di dalamnya. 
+  - `AS jumlahpegawai` : Hasil perhitungan diberi nama `jumlahpegawai`, yang menjelaskan bahwa ini adalah jumlah total pegawai.
+  - `SUM(Gaji)` :  digunakan untuk menghitung jumlah total dari nilai-nilai yang ada dalam kolom `Gaji`.
+  - `AS TotalGaji` : Hasil perhitungan diberi nama `TotalGaji`, yang menjelaskan bahwa ini adalah jumlah total  gaji pegawai.
+  - `AVG(Gaji)` : `AVG()`  digunakan untuk menghitung rata-rata dari nilai-nilai dalam kolom yang ditentukan.  `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS RataGaji` : Hasil perhitungan diberi nama `RataGaji`, yang menjelaskan bahwa ini adalah jumlah Rata-rata gaji pegawai.
+  - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS GajiMaks` : Hasil perhitungan diberi nama `GajiMaks`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
+  - `MIN(Gaji)` : `MIN()` digunakan untuk menentukan nilai minimum atau nilai terkecil dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS GajiMin` : Hasil perhitungan diberi nama `Gaji_Terkecil`, yang menjelaskan bahwa ini adalah minimum atau nilai terkecil gaji pada kolom pegawai.
+  - `FROM pegawai` :  digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+19. Menampilkan MAX, MIN, SUM, AVG dan total pegawai dari jabatan `Staf` dan `Sales` 
+  code
+  ```sql
+   SELECT COUNT(NIP) AS jumlahpegawai, SUM(Gaji) AS TotalGaji,
+   AVG(Gaji) AS RataGaji, MAX(Gaji) AS GajiMaks, MIN(Gaji) AS GajiMin
+   FROM pegawai 
+   WHERE jabatan = 'Staf'  OR jabatan = 'Sales'
+   GROUP BY NoCab HAVING SUM(Gaji) <= 2600000;
+ ```
+
+ ![MSQL](asset/foto_30.PNG)
+
+ analisis: 
+  -  `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
+  - `COUNT(NIP)` : digunakan untuk menghitung jumlah kolom pada tabel `pegawai`  yang di mana `(NIP)` berfungsi menghitung  jumlah baris yang ada di dalamnya. 
+  - `AS jumlahpegawai` : Hasil perhitungan diberi nama `jumlahpegawai`, yang menjelaskan bahwa ini adalah jumlah total pegawai.
+  - `SUM(Gaji)` :  digunakan untuk menghitung jumlah total dari nilai-nilai yang ada dalam kolom `Gaji`.
+  - `AS TotalGaji` : Hasil perhitungan diberi nama `TotalGaji`, yang menjelaskan bahwa ini adalah jumlah total  gaji pegawai.
+  - `AVG(Gaji)` : `AVG()`  digunakan untuk menghitung rata-rata dari nilai-nilai dalam kolom yang ditentukan.  `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS RataGaji` : Hasil perhitungan diberi nama `RataGaji`, yang menjelaskan bahwa ini adalah jumlah Rata-rata gaji pegawai.
+  - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS GajiMaks` : Hasil perhitungan diberi nama `GajiMaks`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
+  - `MIN(Gaji)` : `MIN()` digunakan untuk menentukan nilai minimum atau nilai terkecil dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
+  - `AS GajiMin` : Hasil perhitungan diberi nama `Gaji_Terkecil`, yang menjelaskan bahwa ini adalah minimum atau nilai terkecil gaji pada kolom pegawai.
+  - `FROM pegawai` :  digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+  - `WHERE jabatan = 'Staf'  OR jabatan = 'Sales'` :  `WHERE ` adalah kondisi yang harus di penuhi oleh suatu kolom. `jabatan = 'Staf'  OR jabatan = 'Sales'` adalah kondisi dari `WHERE` yang dimana hanya jabatan `staf` atau `sales` yang salah satunya terpenuhi agar bisa tampil.
+  - `GROUP BY NoCab HAVING SUM(Gaji) <= 2600000` : `GROUP BY ` digunakan untuk mengelompokkan data sesuai dengan kolom yang dipilih. `NoCab` adalah nama kolom yang akan dikelompokkan datanya. `HAVING` adalah suatu kondisi yang harus dipenuhi agar data bisa di tampilkan . `SUM(Gaji) <= 2600000` kondisi dari `HAVING` hasil  data yang dijumlah gajinya kurang dari atau sama dengan `2600000` yang bisa tampil.
