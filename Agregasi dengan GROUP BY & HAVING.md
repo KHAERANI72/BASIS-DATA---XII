@@ -52,7 +52,7 @@ code
 DESC pegawai;
 ```
 
-![MSQL](asset/foto_12.PNG)
+![](asset/foto_12.PNG)
 analisis 
 - ``desc ``: di gunakan untuk menampilkan tabel yang telah dibuat.
 - ``pegawai ``: adalah nama tabel yang ingin di tampilkan.
@@ -63,7 +63,7 @@ analisis
  (data yang ingin di masukkan);
 ```
 
-![MSQL](asset/foto_5.PNG)
+![](asset/foto_5.PNG)
 
 analisis 
 - `INSERT INTO` :  di gunakan untuk memasukkan data pada tabel.
