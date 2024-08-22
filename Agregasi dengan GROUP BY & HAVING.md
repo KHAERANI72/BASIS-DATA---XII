@@ -5,17 +5,16 @@
  CREATE DATABASE company_herani;
  ```
 
-  ![](asset/foto_1.PNG) 
-  analisis 
-  - ``create database`` : digunakan untuk membuat database pada mysql yang dapat menempung data.
-  -  ``company_herani`` : adalah nama database yang digunakan pada mysql.
+![](asset/foto_1.PNG) analisis 
+- ``create database`` : digunakan untuk membuat database pada mysql yang dapat menempung data.
+-  ``company_herani`` : adalah nama database yang digunakan pada mysql.
 2. Menggunakan database
 	code 
   ```sql
   USE company_herani;
   ```
   
-  ![](asset/foto_3.PNG)  
+![](asset/foto_3.PNG)  
   analisis
   - ``USE ``: digunakan ketika ingin menggunakan database.
   - ``[company_herani]`` adalah alamat database yang ingin digunakan 
