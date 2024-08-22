@@ -77,7 +77,7 @@ analisis
 	SELECT * FROM pegawai;
 	```
 
-   ![foto_8|790](asset/foto_8.PNG)
+   ![](asset/foto_8.PNG)
    
    analisis 
   - `SELECT` : di gunakan untuk menampilkan data yang sudah di masukkan.
@@ -90,7 +90,7 @@ analisis
    SELECT COUNT(NIP) AS jumlahpegawai, COUNT(jabatan) AS jumlahjabatan FROM pegawai;
    ```
 
-   ![foto_13|790](asset/foto_13.PNG)
+   ![](asset/foto_13.PNG)
    
    ANALISIS :
    - `SELECT ` : digunakan untuk menentukan kolom apa yang ingin tampilkan dalam hasil query.
@@ -258,7 +258,7 @@ analisis
    FROM pegawai GROUP BY NoCab HAVING NoCab = 'C101' OR NoCab = 'C102';
   ```
 
-  ![MSQL](asset/foto_24.PNG)
+  ![](asset/foto_24.PNG)
 
   ANALISIS : 
   - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
@@ -274,7 +274,7 @@ analisis
   FROM pegawai;
   ```
 
-   ![MSQL](asset/foto_25.PNG)
+   ![](asset/foto_25.PNG)
 
    Analisis: 
    - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -306,7 +306,7 @@ analisis
   FROM pegawai GROUP BY NoCab;
   ```
 
-  ![MSQL](asset/foto_27.PNG) Analisis : 
+  ![](asset/foto_27.PNG) Analisis : 
   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
   - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
   - `AS Gaji_Terbesar` : Hasil perhitungan diberi nama `Gaji_Terbesar`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
@@ -321,7 +321,7 @@ analisis
   FROM pegawai GROUP BY NoCab HAVING COUNT(NIP) >= 3; 
   ```
 
-  ![MSQL](asset/foto_28.PNG)
+  ![](asset/foto_28.PNG)
 
   Analisis : 
   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -340,7 +340,7 @@ analisis
    FROM pegawai;
   ```
 
-  ![MSQL](asset/foto_29.PNG)
+  ![](asset/foto_29.PNG)
 
   ANALISIS : 
   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -365,7 +365,7 @@ analisis
    GROUP BY NoCab HAVING SUM(Gaji) <= 2600000;
  ```
 
- ![MSQL](asset/foto_30.PNG)
+ ![](asset/foto_30.PNG)
 
  analisis: 
   -  `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
