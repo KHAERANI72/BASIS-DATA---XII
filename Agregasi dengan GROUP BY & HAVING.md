@@ -5,7 +5,7 @@
  CREATE DATABASE company_herani;
  ```
 
-  ![MSQL](asset/foto_1.PNG) 
+  ![](asset/foto_1.PNG) 
   analisis 
   - ``create database`` : digunakan untuk membuat database pada mysql yang dapat menempung data.
   -  ``company_herani`` : adalah nama database yang digunakan pada mysql.
@@ -15,7 +15,7 @@
   USE company_herani;
   ```
   
-  ![MSQL](asset/foto_3.PNG)  
+  ![](asset/foto_3.PNG)  
   analisis
   - ``USE ``: digunakan ketika ingin menggunakan database.
   - ``[company_herani]`` adalah alamat database yang ingin digunakan 
@@ -36,7 +36,7 @@ NoCab varchar(50) NOT NULL
 );
 ```
 
-![MSQL](asset/foto_4.PNG)
+![](asset/foto_4.PNG)
 
 analisis 
 -  `create table` :  digunakan untuk membuat table pada database yang telah dibuat.
@@ -120,8 +120,7 @@ analisis
    SELECT NoCab, COUNT(NIP) AS jumlah_pegawai
    FROM pegawai GROUP BY NoCab;
   ```
-
-   ![](asset/foto_15.PNG)
+ ![](asset/foto_15.PNG)
 
    Analisis:
    - `SELECT NoCab`  : digunakan untuk menentukan kolom `NoCab`  yang ingin  tampilkan dalam hasil query.
@@ -166,15 +165,15 @@ analisis
   FROM pegawai WHERE jabatan = 'Manajer' ; 
   ```
 
-   ![](asset/foto_18.PNG)
+  ![](asset/foto_18.PNG)
 
-   Analisis : 
-   - `SELECT` : digunakan untuk menentukan kolom apa  yang ingin  tampilkan dalam hasil query.
-   - `SUM(Gaji) ` :  digunakan untuk menghitung jumlah total dari nilai-nilai yang ada dalam kolom `Gaji`.
-   - `AS total_gaji` : Hasil perhitungan diberi nama `total_gaji`, yang menjelaskan bahwa ini adalah jumlah total  gaji pegawai.
-   - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
-   - `WHERE ` : digunakan untuk memfilter data sehingga hanya baris-baris yang memenuhi kondisi tertentu yang akan dihitung.
-   - `jabatan = 'Manajer'` : hanya baris yang memiliki nilai `jabatan` sama dengan `'Manajer'` yang akan disertakan dalam perhitungan.
+  Analisis : 
+ - `SELECT` : digunakan untuk menentukan kolom apa  yang ingin  tampilkan dalam hasil query.
+ - `SUM(Gaji) ` :  digunakan untuk menghitung jumlah total dari nilai-nilai yang ada dalam kolom `Gaji`.
+ - `AS total_gaji` : Hasil perhitungan diberi nama `total_gaji`, yang menjelaskan bahwa ini adalah jumlah total  gaji pegawai.
+ - `FROM pegawai` : digunakana untuk menunjukkan dari tabel mana data tersebut diambil, data diambil dari tabel `pegawai`.
+ - `WHERE ` : digunakan untuk memfilter data sehingga hanya baris-baris yang memenuhi kondisi tertentu yang akan dihitung.
+  - `jabatan = 'Manajer'` : hanya baris yang memiliki nilai `jabatan` sama dengan `'Manajer'` yang akan disertakan dalam perhitungan.
 8. Menampilkan data gaji yang sudah di kelompokkan berdasarkan 'NoCab'
    code 
    ```sql
@@ -243,7 +242,7 @@ analisis
   FROM pegawai GROUP BY NoCab;
   ```
 
-  ![MSQL](asset/foto_23.PNG)
+  ![](asset/foto_23.PNG)
 
   Analisis : 
   - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
