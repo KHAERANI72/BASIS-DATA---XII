@@ -45,14 +45,14 @@ analisis
 -  Kolom `NBlk` : menyimpan data nama belakang dengan tipe data `varchar(50)` dengan panjang data 50 karakter dan  bersifat opsional / bisa tidak diisi.
 - Kolom `jenis_kelamin` : menyimpan data jenis kelamin dengan tipe data `enum` digunakan untuk mendefinisikan sekumpulan nilai yang mewakili status atau kondisi tertentu dan bersifat `NOT NULL` yang bersifat wajib diisi.
 - Kolom `alamat` : menyimpan data alamat dengan tipe data `text` 
-s
+
 # Menampilkan table 
 code 
 ```sql
 DESC pegawai;
 ```
 
-![](asset/foto_12.PNG)
+![](asset/foto_12.png)
 analisis 
 - ``desc ``: di gunakan untuk menampilkan tabel yang telah dibuat.
 - ``pegawai ``: adalah nama tabel yang ingin di tampilkan.
@@ -63,7 +63,7 @@ analisis
  (data yang ingin di masukkan);
 ```
 
-![](asset/foto_5.PNG)
+![](asset/foto_5.png)
 
 analisis 
 - `INSERT INTO` :  di gunakan untuk memasukkan data pada tabel.
@@ -77,7 +77,7 @@ analisis
 	SELECT * FROM pegawai;
 	```
 
-   ![](asset/foto_8.PNG)
+   ![](asset/foto_8.png)
    
    analisis 
   - `SELECT` : di gunakan untuk menampilkan data yang sudah di masukkan.
@@ -90,7 +90,7 @@ analisis
    SELECT COUNT(NIP) AS jumlahpegawai, COUNT(jabatan) AS jumlahjabatan FROM pegawai;
    ```
 
-   ![](asset/foto_13.PNG)
+   ![](asset/foto_13.png)
    
    ANALISIS :
    - `SELECT ` : digunakan untuk menentukan kolom apa yang ingin tampilkan dalam hasil query.
@@ -106,7 +106,7 @@ analisis
    FROM pegawai WHERE NoCab = 'C102';
    ```
 
-   ![](asset/foto_14.PNG)
+   ![](asset/foto_14.png)
 
    Analisis : 
   - `SELECT` : digunakan untuk menentukan kolom apa yang ingin tampilkan dalam hasil query. 
@@ -120,7 +120,7 @@ analisis
    SELECT NoCab, COUNT(NIP) AS jumlah_pegawai
    FROM pegawai GROUP BY NoCab;
    ```
-   ![](asset/foto_15.PNG)
+   ![](asset/foto_15.png)
 
    Analisis:
    - `SELECT NoCab`  : digunakan untuk menentukan kolom `NoCab`  yang ingin  tampilkan dalam hasil query.
@@ -136,7 +136,7 @@ analisis
    FROM pegawai GROUP BY NoCab HAVING COUNT(NIP) >= 3;
    ```
 
-   ![](asset/foto_16.PNG)
+   ![](asset/foto_16.png)
 
    Analisis : 
    - `SELECT NoCab` : digunakan untuk menentukan kolom `NoCab`  yang ingin tampilkan dalam hasil query.
@@ -152,7 +152,7 @@ analisis
   FROM pegawai;
   ```
 
-   ![](asset/foto_17.PNG) 
+   ![](asset/foto_17.png) 
 
    Analisis : 
    - `SELECT` : digunakan untuk menentukan kolom apa  yang ingin  tampilkan dalam hasil query.
@@ -166,7 +166,7 @@ analisis
   FROM pegawai WHERE jabatan = 'Manajer' ; 
   ```
 
-  ![](asset/foto_18.PNG)
+  ![](asset/foto_18.png)
 
   Analisis : 
  - `SELECT` : digunakan untuk menentukan kolom apa  yang ingin  tampilkan dalam hasil query.
@@ -182,7 +182,7 @@ analisis
    FROM pegawai GROUP BY NoCab;
   ```
 
- ![](asset/foto_19.PNG) 
+ ![](asset/foto_19.png) 
 
  Analisis : 
  - `SELECT NoCab` :  digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
@@ -197,7 +197,7 @@ analisis
    FROM pegawai GROUP BY NoCab HAVING SUM(Gaji) >= 8000000;
    ```
 
-   ![](asset/foto_20.PNG)
+   ![](asset/foto_20.png)
 
    Analisis : 
    - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
@@ -212,7 +212,7 @@ analisis
    SELECT AVG(Gaji) AS Rata_rata FROM pegawai;
   ```
 
-   ![](asset/foto_21.PNG)
+   ![](asset/foto_21.png)
 
    Analisis : 
    - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -227,7 +227,7 @@ analisis
   WHERE jabatan = 'Manajer';   
   ```
 
-  ![](asset/foto_22.PNG)
+  ![](asset/foto_22.png)
 
   Analisis: 
   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -243,7 +243,7 @@ analisis
   FROM pegawai GROUP BY NoCab;
   ```
 
-  ![](asset/foto_23.PNG)
+  ![](asset/foto_23.png)
 
   Analisis : 
   - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
@@ -258,7 +258,7 @@ analisis
    FROM pegawai GROUP BY NoCab HAVING NoCab = 'C101' OR NoCab = 'C102';
   ```
 
-  ![](asset/foto_24.PNG)
+  ![](asset/foto_24.png)
 
   ANALISIS : 
   - `SELECT NoCab` : digunakan untuk menentukan kolom yang akan ditampilkan dalam hasil query. Yang dimana data yang akan ditampilkan adalah NoCab yang menjadi dasar pengelompokan data.
@@ -274,7 +274,7 @@ analisis
   FROM pegawai;
   ```
 
-   ![](asset/foto_25.PNG)
+   ![](asset/foto_25.png)
 
    Analisis: 
    - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -290,7 +290,7 @@ analisis
   FROM pegawai WHERE jabatan = 'Manajer' ;
   ```
 
-  ![MSQL](asset/foto_26.PNG) 
+  ![MSQL](asset/foto_26.png) 
   ANALISIS: 
  - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
  - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
@@ -306,7 +306,7 @@ analisis
   FROM pegawai GROUP BY NoCab;
   ```
 
-  ![](asset/foto_27.PNG) Analisis : 
+  ![](asset/foto_27.png) Analisis : 
   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
   - `MAX(Gaji)` : `MAX()` digunakan untuk menemukan nilai maksimum (nilai terbesar) dari kolom. `Gaji` adalah kolom yang berisi nilai gaji dari setiap pegawai.
   - `AS Gaji_Terbesar` : Hasil perhitungan diberi nama `Gaji_Terbesar`, yang menjelaskan bahwa ini adalah maksimum atau nilai terbesar gaji pada kolom pegawai.
@@ -321,7 +321,7 @@ analisis
   FROM pegawai GROUP BY NoCab HAVING COUNT(NIP) >= 3; 
   ```
 
-  ![](asset/foto_28.PNG)
+  ![](asset/foto_28.png)
 
   Analisis : 
   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -340,7 +340,7 @@ analisis
    FROM pegawai;
   ```
 
-  ![](asset/foto_29.PNG)
+  ![](asset/foto_29.png)
 
   ANALISIS : 
   - `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
@@ -365,7 +365,7 @@ analisis
    GROUP BY NoCab HAVING SUM(Gaji) <= 2600000;
  ```
 
- ![MSQL](asset/foto_30.PNG)
+ ![MSQL](asset/foto_30.png)
 
  analisis: 
   -  `SELECT` : digunakan untuk menentukan kolom mana yang ingin ditampilkan dalam hasil.
